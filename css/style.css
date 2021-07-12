@@ -1,0 +1,1426 @@
+@import url(../css/all.min.css);
+
+/*Allgemeine Formatierungen für alle Devices/Geräte----------------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: white;
+  color: #333333;
+  font-family: 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Ubuntu';
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 1em;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 17px;
+  line-height: 1.97em;
+}
+
+.innerbox {
+  max-width: 80%;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 2%;
+}
+
+section .innerbox {
+  padding: 50px 2% 0;
+}
+
+/*header + logo + nav + toggle -------------------------------------------------*/
+.main_h {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  max-height: 70px;
+  z-index: 999;
+  width: 100%;
+  padding-top: 17px;
+  padding-bottom: 6px;
+  background-color: rgba(255, 255, 255, 0.93);
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/*beim scrollen des Dokumentes nach unten , wird ab einer gewissen Scroll-Höhe über das script.js dem Header zu der vorhanden Klasse .main_h eine weitere Klasse .sticky hinzugefügt/ergänzt */
+.sticky {
+  border-bottom: 1px solid gainsboro;
+}
+
+.open-nav {
+  max-height: 400px !important;
+}
+
+.open-nav .mobile-toggle {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+}
+
+#logo {
+  width: 50px;
+  font-size: 2em;
+  font-weight: 700;
+  color: #6bcb65;
+  text-transform: uppercase;
+  float: left;
+  display: block;
+  margin-top: 0;
+  line-height: 1;
+  margin-bottom: 10px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#logo:hover {
+  color: #8f8f8f;
+}
+
+header nav {
+  float: right;
+  width: 90%;
+}
+
+header nav ul {
+  list-style: none;
+  overflow: hidden;
+  text-align: right;
+  float: right;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-left: 3em;
+  line-height: 1.5;
+}
+
+header nav ul a {
+  color: #2babe5;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  font-weight: 700;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+header nav ul a:hover {
+  color: #8f8f8f;
+  text-decoration: underline;
+}
+
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  right: 22px;
+  top: 0;
+  width: 30px;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+
+.mobile-toggle span {
+  width: 30px;
+  height: 4px;
+  margin-bottom: 6px;
+  border-radius: 1000px;
+  background: #8f8f8f;
+  display: block;
+}
+
+/*Hero-Großbildbereicht mit H1-Überschrift und span-Animationen-----------------*/
+.hero {
+  position: relative;
+  background: url(../bilder/hero-bg6.jpeg) no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  color: #2babe5;
+  letter-spacing: 2px;
+  height: 100vh;
+}
+
+.hero .innerbox {
+  position: relative;
+}
+
+.hero .innerbox .hallo-box {
+  display: inline-block;
+  margin-top: 8em;
+  padding: 3em;
+  text-align: left;
+  overflow: hidden;
+  background: rgb(255, 255, 255, 0.65);
+}
+
+.hero h1, .hero h2, .hero p {
+  line-height: 1.4em;
+  color: transparent;
+  position: relative;
+  animation: text_reveal .7s ease forwards;
+  animation-delay: 1.5s;
+}
+
+.hero p {
+  font-size: 2.5em;
+  font-weight: 700;
+  /* text-transform: uppercase; */
+}
+
+.hero h1 {
+  font-size: 2.5em;
+}
+
+.hero h2 {
+  font-size: 2.2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+.hero h1 span, .hero h2 span, .hero p span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: #2babe5;
+  animation: text_reveal_box 1.7s ease;
+  animation-delay: 1s;
+}
+
+/* Animation Text Reveal*/
+@keyframes text_reveal_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes text_reveal {
+  100% {
+    color: #2babe5;
+  }
+}
+
+.hero a.portfolio {
+  float: left;
+  width: 47%;
+}
+
+.hero .cta:last-child {
+  float: right;
+  width: 47%;
+}
+
+.hero .cta {
+  display: inline-block;
+  text-align: center;
+  color: #6bcb65;
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid #6bcb65;
+  font-size: 1.214em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-top: 10px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.hero .cta:hover {
+  color: white;
+  background-color: #6bcb65;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+/*Sektion Skills ---------------------------------------------------------------*/
+.single-progress {
+  overflow: hidden;
+}
+
+section .innerbox h1 {
+  margin-bottom: 0.7em;
+  text-align: center;
+}
+
+#skills label {
+  line-height: 2em;
+  font-weight: 700;
+  color: #777;
+  font-size: 1.4em;
+}
+
+.icon {
+  text-align: right;
+  float: right;
+}
+
+.fab, .fas {
+  font-size: 1.8em;
+  color: #2babe5;
+}
+
+.progress {
+  height: 1em;
+  margin-bottom: 15px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+.progress-bar {
+  float: left;
+  width: 0;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  background-color: #6bcb65;
+}
+
+/* Ende Sektion Skills ---------------------------------------------------------*/
+/* Section Portfolio -----------------------------------------------------------*/
+#portfolio .innerbox {
+  max-width: 100%;
+  padding: 50px 0;
+}
+
+#portfolio .innerbox ul {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+#portfolio .innerbox ul li {
+  line-height: 0;
+  width: 50%;
+  float: left;
+}
+
+#portfolio .innerbox ul li figure {
+  margin: 0;
+  position: relative;
+}
+
+#portfolio .innerbox ul figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+ul#work-list figcaption:hover {
+  opacity: 1;
+}
+
+#portfolio .innerbox ul li figure img {
+  width: 100%;
+  max-height: 390px;
+}
+
+#portfolio .innerbox ul li figure {
+  margin: 0;
+  position: relative;
+}
+
+.figcaption-box {
+  line-height: 1.5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+.projekt {
+  display: block;
+  background: #6bcb65;
+  color: #fff;
+  padding: 0.3em 1.875em;
+  margin-bottom: 0.3em;
+  transform: translateY(-40px);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.projekt:hover {
+  background: #45913f;
+}
+
+.kategorie {
+  display: block;
+  color: #fff;
+  transform: translateY(40px);
+  -webkit-transition: all 0.1s ease-in-out 0.5s;
+  -moz-transition: all 0.1s ease-in-out 0.5s;
+  -ms-transition: all 0.1s ease-in-out 0.5s;
+  -o-transition: all 0.1s ease-in-out 0.5s;
+  transition: all 0.1s ease-in-out 0.5s;
+  opacity: 0;
+}
+
+.kategorie:hover {
+  text-decoration: underline;
+}
+
+ul#work-list figure:hover .projekt {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+ul#work-list figure:hover .kategorie {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+/* Ende Section Portfolio ------------------------------------------------------*/
+/* Section Werdegang ---------------------------------------------------------- */
+.date-mob {
+  display: none;
+}
+
+.timeline {
+  margin: 0 auto;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 3px 1fr;
+  color: #646464;
+}
+
+.timeline__component {
+  margin: 0 20px 20px 20px;
+}
+
+.timeline__component--bg {
+  padding: 1.5em;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* LEAVE TILL LAST */
+.timeline__component--bottom {
+  margin-bottom: 0;
+}
+
+.timeline__middle {
+  position: relative;
+  background: #bdbdbd;
+}
+
+.timeline__point {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  background: hsl(204, 100%, 81%);
+  border-radius: 50%;
+}
+
+/* LEAVE TILL LAST */
+.timeline__point--bottom {
+  top: initial;
+  bottom: 0;
+}
+
+.timeline__date--right {
+  text-align: right;
+}
+
+.timeline__title {
+  margin: 0;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
+.timeline__paragraph {
+  line-height: 1.5;
+}
+
+/* Ende Section Werdegang ------------------------------------------------------*/
+/* About------------------------------------------------------------------------*/
+#about {
+  background: #eceff3;
+}
+
+#about .innerbox {
+  overflow: hidden;
+  padding-bottom: 3em;
+}
+
+#about .innerbox .row{
+  overflow: hidden;
+  
+  
+ 
+}
+
+#about .innerbox .row img{
+  float: left;
+ 
+  width: 30%;
+  margin: 0 2% 2% 0;
+  
+ 
+}
+
+
+#about .innerbox .row .cta {
+  float: left;
+  width: 30%;
+  margin-right: 2%;
+  color: #6bcb65;
+  padding: 10px 30px;
+  background-color: transparent;
+  border: 2px solid #6bcb65;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  
+  text-align: center;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#about .innerbox .row .cta:hover {
+  color: white;
+  background-color: #6bcb65;
+}
+
+
+#about .innerbox .row .social{
+ 
+  float: left;
+  width: 66%;
+  
+}
+
+
+#about .innerbox .row .social a{
+  
+ 
+  padding: 0;
+  
+}
+
+#about .innerbox .row .social a i {
+  
+  color: #45913f;
+  font-size: 3.25em;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  margin-right: 0.2em;
+  
+  
+}
+
+#about .innerbox .row .social a i:hover {
+  color: #3F464E;
+}
+
+/* Ende About-------------------------------------------------------------------*/
+/* Kontakt ---------------------------------------------------------------------*/
+#kontakt {
+  margin-bottom: 2em;
+}
+
+#kontakt .innerbox form .inputs {
+  overflow: hidden;
+}
+
+#kontakt .innerbox form .inputs p {
+  float: left;
+  width: 32%;
+  margin-right: 2%;
+  padding-top: 0.65em;
+}
+
+#kontakt .innerbox form .inputs input {
+  width: 100%;
+  line-height: 2em;
+}
+
+#kontakt .innerbox form .inputs p:last-child {
+  margin-right: 0;
+}
+
+.row {
+  overflow: hidden;
+}
+
+#kontakt .innerbox form .row .inputs p input {
+  height: 2em;
+  width: 100%;
+}
+
+#kontakt .innerbox form .row .nachricht {
+  width: 100%;
+}
+
+#kontakt .innerbox form .row .nachricht p {
+  margin: 0;
+}
+
+#kontakt .innerbox form .row .nachricht p textarea {
+  width: 100%;
+  height: 285px;
+}
+
+#kontakt .innerbox form .row p input[type="submit"] {
+  float: right;
+  margin-top: 1.25em;
+  line-height: 0.1em;
+  color: #6bcb65;
+  padding: 20px 30px;
+  background-color: transparent;
+  border: 2px solid #6bcb65;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: 1.2rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#kontakt .innerbox form .row p input[type="submit"]:hover {
+  color: white;
+  background-color: #6bcb65;
+  cursor: pointer;
+}
+
+.ben {
+  float: left;
+}
+
+/* Ende Kontakt ----------------------------------------------------------------*/
+/* Footer---------------------------------------------- ------------------------*/
+footer {
+  background: #3F464E;
+  color: #fff;
+  padding: 1em;
+}
+
+footer .innerbox {
+  overflow: hidden;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer .innerbox nav {
+  margin-top: 0.5em;
+  margin-bottom: 0.6em;
+}
+
+footer .innerbox #social {
+  text-align: center;
+  margin-bottom: 0.8em;
+}
+
+footer .innerbox #social a i {
+  color: rgb(255, 255, 255);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  margin-left: 0.2em;
+}
+
+footer .innerbox #social a i:hover {
+  color: #2babe5;
+}
+
+footer .innerbox nav ul {
+  list-style-type: none;
+  margin-bottom: 1.5em;
+}
+
+footer .innerbox nav ul li {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+footer .innerbox nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .innerbox nav ul li a:hover {
+  text-decoration: underline;
+}
+
+footer .innerbox nav ul li a[href^="tel:"] {
+  background: url(../bilder/icons/phone.png) no-repeat left center;
+  padding-left: 20px;
+}
+
+footer .innerbox nav ul li a[href^="mailto:"] {
+  background: url(../bilder/icons/mail.png) no-repeat left bottom;
+  padding-left: 20px;
+}
+
+footer p {
+  text-align: center;
+  margin: 0;
+  font-size: 1em;
+}
+
+/* Ende Footer----------------------------------------------------------------- */
+/* Unterseiten Projekt Page ----------------------------------------------------*/
+main .innerbox {
+  margin-top: 7em;
+  overflow: hidden;
+  position: relative;
+}
+
+main .innerbox h1 {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+main .innerbox .links {
+  width: 20%;
+  float: left;
+}
+
+main .innerbox .links .cta {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1em;
+  color: #6bcb65;
+  padding: 10px 30px;
+  background-color: transparent;
+  border: 2px solid #6bcb65;
+  font-size: 1.214em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: .1em;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+main .innerbox .links .cta:hover {
+  color: white;
+  background-color: #6bcb65;
+}
+
+main .innerbox .links .tech {
+  background: #E8E8E8;
+  padding: 1em;
+}
+
+main .innerbox .links .tech ul {
+  list-style-image: url(../bilder/icons/star-2.png);
+}
+
+main .innerbox .links .tech ul li {
+  margin: 0 0 0.5em 1em;
+  font-size: 1.214em;
+}
+
+main .innerbox .links .tech ul li i {
+  font-size: 1.214em;
+}
+
+main .innerbox .rechts {
+  width: 78.3%;
+  float: right;
+}
+
+main .innerbox .rechts h3 {
+  margin: 1em 0;
+}
+
+main .innerbox .rechts img {
+  width: 100%;
+}
+
+main .innerbox .rechts figure {
+  width: 50%;
+  text-align: center;
+}
+
+main .innerbox .rechts ul {
+  list-style-type: none;
+}
+
+main .innerbox .rechts ul li {
+  font-size: 1.214em;
+}
+
+main .innerbox .rechts a {
+  text-decoration: none;
+  color: #3F464E;
+}
+
+main .innerbox .rechts a:hover {
+  text-decoration: underline;
+}
+
+/* Ende Projekt Page -----------------------------------------------------------*/
+/* scroll-to-top  --------------------------------------------------------------*/
+#scroll-to-top {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background: #3F464E;
+  color: #fff;
+  right: 20px;
+  bottom: 20px;
+  font-size: 3em;
+  text-align: center;
+  display: none;
+  /*scroll-to-top-button von Anfang an ausblenden und über javascript-ereignis wieder einblenden*/
+  z-index: 9999;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#scroll-to-top:hover {
+  color: #fff;
+  background: #000;
+}
+
+/* scroll-to-top  ----------------------------------------------------------- --*/
+@media only screen and (max-width: 1360px) {
+  #portfolio .innerbox ul li figure img {
+    max-height: 365px;
+  }
+}
+
+/*Mediaqueries /Breakpoint / CSS-Weiche 1280px ---------------------------------*/
+@media only screen and (max-width: 1280px) {
+  p {
+    line-height: 1.86em;
+  }
+
+  .hero h1, .hero h2, .hero p {
+    font-size: 2em;
+  }
+
+  .hero a.cta {
+    font-size: 1.2em;
+    padding: 0.5em;
+  }
+}
+
+/*Ende max-width:1280px-----------------------------------------------------------*/
+@media only screen and (max-width: 1200px) {
+  #portfolio .innerbox ul li figure img {
+    max-height: 350px;
+  }
+}
+
+/*Mediaqueries /Breakpoint / CSS-Weiche 1140px ---------------------------------*/
+@media only screen and (max-width: 1140px) {
+  h3 {
+    font-size: 1.2em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+  }
+
+  /* HEADER */
+  .main_h {
+    padding-top: 25px;
+  }
+
+  #logo {
+    float: none;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    padding-top: 10px;
+    /* margin-bottom: 22px; */
+    float: left;
+    width: 100%;
+  }
+
+  header nav ul li {
+    width: 100%;
+    padding: 7px 0;
+    margin: 0;
+    text-align: center;
+    margin-left: 0;
+    font-size: 0.9em;
+  }
+
+  .mobile-toggle {
+    display: block;
+    /*aubgeblendeten toggle sichtbar machen*/
+    cursor: pointer;
+    position: absolute;
+    right: 22px;
+    top: 5px;
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+  }
+
+  /* HERO */
+  .hero {
+    background: url(../bilder/hero-bg6.jpeg) no-repeat center scroll;
+  }
+
+  .hero h1, .hero h2, .hero p {
+    font-size: 2.2em;
+    text-align: center;
+  }
+
+  .hero .innerbox {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero .cta {
+    font-size: 1em;
+    color: white;
+    background-color: #6bcb65
+  }
+
+  /* PORTFOLIO */
+  #portfolio .innerbox {
+    padding-bottom: 0;
+  }
+
+  #portfolio .innerbox ul li {
+    width: 100%;
+    float: none;
+  }
+
+  #portfolio .innerbox ul li figure img {
+    max-height: none;
+  }
+
+  #portfolio .innerbox ul figcaption {
+    position: static;
+    background: transparent;
+    opacity: 1;
+  }
+
+  .figcaption-box {
+    position: static;
+    transform: translate(0, 0);
+    margin-bottom: 1.7em;
+  }
+
+  .projekt {
+    display: block;
+    margin-bottom: 0;
+    background: transparent;
+    color: #3F464E;
+    padding: 0.3em 0 0;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .projekt:hover {
+    color: #3F464E;
+    background: transparent;
+  }
+
+  .kategorie {
+    display: block;
+    color: #3F464E;
+    background: transparent;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .kategorie:hover {
+    text-decoration: none;
+  }
+
+  /* werdegang TIMELINE */
+  #werdegang .innerbox {
+    padding-top: 0;
+  }
+
+  .timeline {
+    display: block;
+    padding: 0;
+  }
+
+  .timeline__component {
+    margin: 0 10px 10px 10px;
+    text-align: center;
+  }
+
+  .timeline__point {
+    display: none;
+  }
+
+  .timeline__date {
+    display: none;
+  }
+
+  .date-mob {
+    display: inline-block;
+  }
+
+  
+
+  /* KONTAKT */
+  #kontakt .innerbox form .inputs p {
+    float: none;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  #kontakt .innerbox form .row .nachricht p {
+    margin: 0.7em 0;
+    text-align: center;
+  }
+
+  #kontakt .innerbox form .row .nachricht p textarea {
+    width: 100%;
+    height: 185px;
+  }
+
+  #kontakt .innerbox form .row p input[type="submit"] {
+    float: none;
+    margin: auto;
+    width: 100%;
+  }
+
+  .ben {
+    float: none;
+    text-align: center;
+  }
+
+  /* FOOTER */
+  footer .innerbox nav {
+    float: none;
+    text-align: center;
+  }
+
+  footer .innerbox #social {
+    float: none;
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+
+  footer .innerbox nav ul li {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+
+  footer .innerbox nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  footer .innerbox nav ul li a:hover {
+    text-decoration: underline;
+  }
+
+  footer p {
+    text-align: center;
+    margin: 0;
+    font-size: 1em;
+  }
+
+  /* UNTERSEITEN */
+  main .innerbox {
+    margin-top: 5em;
+  }
+
+  main .innerbox h1 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  main .innerbox .links {
+    width: 100%;
+    float: none;
+  }
+
+  main .innerbox .links p {
+    text-align: center;
+  }
+
+  main .innerbox .links .tech ul {
+    list-style-image: none;
+    list-style-type: none;
+    text-align: center;
+  }
+
+  main .innerbox .links .tech ul li {
+    font-size: 1em;
+  }
+
+  main .innerbox .rechts ul li {
+    font-size: 1em;
+  }
+
+  main .innerbox .rechts {
+    text-align: center;
+    width: 100%;
+    float: none;
+  }
+
+  main .innerbox .rechts p span {
+    display: none;
+  }
+
+  /* scroll-to-top  */
+  #scroll-to-top {
+    width: 30px;
+    height: 30px;
+    font-size: 2em;
+  }
+}
+
+/*Ende max-width:1140px-----------------------------------------------------------*/
+
+/*Mediaqueries /Breakpoint / CSS-Weiche 1024px ---------------------------------*/
+@media only screen and (max-width: 1024px) {
+
+/* SKILLS */
+
+  #skills label {
+    line-height: 2em;
+    font-size: 1.2em;
+  }
+
+ /* ABOUT */
+
+ #about .innerbox .row p {
+  margin-bottom: 0;
+}
+ 
+#about .innerbox .row p:last-child {
+  margin-bottom: 0.5em;
+}
+ 
+
+ #about .innerbox .row .cta {
+  
+  padding: 10px 10px;
+  font-size: 1rem;
+ 
+}
+ 
+#about .innerbox .row .social{
+ text-align: right;
+}
+
+#about .innerbox .row .social a i {
+
+  margin-right: 0;
+  margin-left: 0.1em;
+}
+
+
+}
+
+/*Mediaqueries /Ende Breakpoint / CSS-Weiche 1024px ---------------------------------*/
+
+
+/*Mediaqueries /Breakpoint / CSS-Weiche 800px ---------------------------------*/
+@media only screen and (max-width: 800px) {
+  .hero .innerbox .hallo-box {
+    margin-top: 14em;
+    max-width: 100%;
+  }
+
+  .hero h1, .hero h2, .hero p {
+    font-size: 2.2em;
+  }
+}
+
+/*Mediaqueries /Ende Breakpoint / CSS-Weiche 800px ---------------------------------*/
+/*Mediaqueries /Breakpoint / CSS-Weiche 768px ---------------------------------*/
+@media only screen and (max-width: 768px) {
+  .hero .innerbox .hallo-box {
+    text-align: center;
+    margin-top: 23em;
+  }
+
+  .hero h1, .hero h2, .hero p {
+    font-size: 2.2em;
+    margin: 0.2em;
+    padding: 0;
+  }
+
+  .hero a.cta.portfolio,
+  .hero a.cta.about {
+    font-size: 1.2em;
+    float: none;
+    width: 100%;
+    margin: 0.5em;
+  }
+}
+
+/*Mediaqueries /Ende Breakpoint / CSS-Weiche 768px ---------------------------------*/
+/*Mediaqueries /Breakpoint / CSS-Weiche 736px ---------------------------------*/
+@media only screen and (max-width: 736px) {
+  .hero .innerbox .hallo-box {
+    text-align: center;
+    margin-top: 7em;
+  }
+
+  .hero h1, .hero h2, .hero p {
+    font-size: 1.7em;
+  }
+
+  .hero a.cta.portfolio,
+  .hero a.cta.about {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+  }
+}
+
+/*Mediaqueries /Ende Breakpoint / CSS-Weiche 736px ---------------------------------*/
+/*Mediaqueries /Breakpoint / CSS-Weiche 620px ---------------------------------*/
+@media only screen and (max-width: 620px) {
+  .hero .innerbox .hallo-box {
+    margin-top: 17em;
+  }
+
+  .hero h1, .hero h2, .hero p {
+    font-size: 1.7em;
+    margin-bottom: 0.5em;
+  }
+
+  .hero a.cta.portfolio,
+  .hero a.cta.about {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    width: 100%;
+  }
+
+  #skills label {
+    line-height: 2em;
+    font-size: 1.2em;
+    margin-top: 0;
+  }
+
+  /* ABOUT */
+  #about .innerbox .about-foto {
+    float: none;
+    width: 100%;
+  }
+
+  #about .innerbox .about-text {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  #about .innerbox .about-text p {
+    line-height: 2em;
+  }
+}
+
+/*Ende max-width:620px-----------------------------------------------------------*/
+/*Mediaqueries /Breakpoint / CSS-Weiche 420px ---------------------------------*/
+@media only screen and (max-width: 420px) {
+  .hero h1, .hero h2, .hero p {
+    font-size: 1.7em;
+  }
+
+  .hero .innerbox {
+    padding: 0 0;
+  }
+
+  .hero .innerbox .hallo-box {
+    
+    padding: 1.5em;
+    
+  }
+
+  .hero a.portfolio {
+    float: none;
+    width: 100%;
+  }
+
+  .hero .cta:last-child {
+    float: none;
+    width: 100%;
+  }
+
+ 
+
+  #skills label {
+    line-height: 1.6em;
+    font-size: 1.2em;
+  }
+
+  #about .innerbox .row{
+    text-align: center;
+  }
+
+
+#about .innerbox .row img,
+#about .innerbox .row .cta,
+#about .innerbox .row .social
+
+{
+  float: none;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 0.5em;
+  
+}
+
+#about .innerbox .row .social {
+  text-align: center;
+}
+
+
+
+
+}
+
+/*Ende max-width:420px-----------------------------------------------------------*/
+/*Mediaqueries /Breakpoint / CSS-Weiche 375px ---------------------------------*/
+@media only screen and (max-width: 375px) {
+  #skills label {
+    line-height: 2em;
+    font-size: 1em;
+  }
+}
+
+/*Ende max-width:420px-----------------------------------------------------------*/
+/*Google-Schriften local auf den Server ablegen und abrufen, somit können keine personenbezogenen Daten über den Google-Webfonts-Server abgerufen werden / datenschutzrechtliche Maßnahme*/
+/* ubuntu-regular - latin */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/ubuntu-v15-latin-regular.eot');
+  /* IE9 Compat Modes */
+  src: local(''),
+    url('../fonts/ubuntu-v15-latin-regular.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('../fonts/ubuntu-v15-latin-regular.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('../fonts/ubuntu-v15-latin-regular.woff') format('woff'),
+    /* Modern Browsers */
+    url('../fonts/ubuntu-v15-latin-regular.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('../fonts/ubuntu-v15-latin-regular.svg#Ubuntu') format('svg');
+  /* Legacy iOS */
+}
+
+/* ubuntu-700 - latin */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/ubuntu-v15-latin-700.eot');
+  /* IE9 Compat Modes */
+  src: local(''),
+    url('../fonts/ubuntu-v15-latin-700.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('../fonts/ubuntu-v15-latin-700.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('../fonts/ubuntu-v15-latin-700.woff') format('woff'),
+    /* Modern Browsers */
+    url('../fonts/ubuntu-v15-latin-700.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('../fonts/ubuntu-v15-latin-700.svg#Ubuntu') format('svg');
+  /* Legacy iOS */
+}
